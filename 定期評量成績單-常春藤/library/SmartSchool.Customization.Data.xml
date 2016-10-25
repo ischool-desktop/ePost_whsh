@@ -230,106 +230,6 @@
             暫存容器
             </summary>
         </member>
-        <member name="T:SmartSchool.Customization.Data.CourseRecord_New">
-            <summary>
-            課程資訊(New)
-            </summary>
-        </member>
-        <member name="T:SmartSchool.Customization.Data.CourseRecord">
-            <summary>
-            課程紀錄
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.CourseID">
-            <summary>
-            系統編號
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.CourseName">
-            <summary>
-            課程名稱
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.Subject">
-            <summary>
-            科目
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.SubjectLevel">
-            <summary>
-            科目級別
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.SchoolYear">
-            <summary>
-            學年度
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.Semester">
-            <summary>
-            學期
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.Credit">
-            <summary>
-            學分數
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.Entry">
-            <summary>
-            分項類別
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.NotIncludedInCredit">
-            <summary>
-            不計學分
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.NotIncludedInCalc">
-            <summary>
-            不需評量
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.CourseCategorys">
-            <summary>
-            課程類別
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.StudentAttendList">
-            <summary>
-            修課學生資料(必須先呼叫FillStudentAttend)
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.Fields">
-            <summary>
-            其他資料欄位(需先呼叫FillField填入需要的欄位)
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.ExamScoreList">
-            <summary>
-            修課學生成績(必須先呼叫FillExamScore)
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.RequiredBy">
-            <summary>
-            校部訂
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.Required">
-            <summary>
-            必選修
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord.ExamList">
-            <summary>
-            考試清單(必須先呼叫FillExam)
-            </summary>
-        </member>
-        <member name="P:SmartSchool.Customization.Data.CourseRecord_New.CreditDec">
-            <summary>
-            學分數
-            </summary>
-        </member>
         <member name="T:SmartSchool.Customization.Data.StudentExtension.ExtensionFieldCollection">
             <summary>
             延伸欄位資料
@@ -792,6 +692,96 @@
         <member name="P:SmartSchool.Customization.Data.StudentRecord.ExtensionFields">
             <summary>
             學生延伸欄位資料
+            </summary>
+        </member>
+        <member name="T:SmartSchool.Customization.Data.CourseRecord">
+            <summary>
+            課程紀錄
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.CourseID">
+            <summary>
+            系統編號
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.CourseName">
+            <summary>
+            課程名稱
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.Subject">
+            <summary>
+            科目
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.SubjectLevel">
+            <summary>
+            科目級別
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.SchoolYear">
+            <summary>
+            學年度
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.Semester">
+            <summary>
+            學期
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.Credit">
+            <summary>
+            學分數
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.Entry">
+            <summary>
+            分項類別
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.NotIncludedInCredit">
+            <summary>
+            不計學分
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.NotIncludedInCalc">
+            <summary>
+            不需評量
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.CourseCategorys">
+            <summary>
+            課程類別
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.StudentAttendList">
+            <summary>
+            修課學生資料(必須先呼叫FillStudentAttend)
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.Fields">
+            <summary>
+            其他資料欄位(需先呼叫FillField填入需要的欄位)
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.ExamScoreList">
+            <summary>
+            修課學生成績(必須先呼叫FillExamScore)
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.RequiredBy">
+            <summary>
+            校部訂
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.Required">
+            <summary>
+            必選修
+            </summary>
+        </member>
+        <member name="P:SmartSchool.Customization.Data.CourseRecord.ExamList">
+            <summary>
+            考試清單(必須先呼叫FillExam)
             </summary>
         </member>
         <member name="P:SmartSchool.Customization.Data.StudentAttendCourseRecord.FinalScore">

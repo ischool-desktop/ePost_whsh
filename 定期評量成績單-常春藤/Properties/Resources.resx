@@ -130,8 +130,8 @@
   <data name="個人學期成績單樣板_高中_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\個人學期成績單樣板(高中).doc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="常春藤評量成績單_樣版" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\常春藤評量成績單_樣版.doc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="個人定期評量成績單樣版_文華高中格式_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\個人定期評量成績單樣版(文華高中格式).doc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="歡樂的合併欄位總表" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\歡樂的合併欄位總表.doc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

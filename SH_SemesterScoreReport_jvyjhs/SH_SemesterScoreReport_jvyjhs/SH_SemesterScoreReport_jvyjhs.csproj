@@ -35,9 +35,9 @@
       <HintPath>Library\Aspose.Cells_201402.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Aspose.Words_201402, Version=14.1.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+    <Reference Include="Aspose.Words, Version=4.4.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Library\Aspose.Words_201402.dll</HintPath>
+      <HintPath>Library\Aspose.Words.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
@@ -186,6 +186,8 @@
   <ItemGroup>
     <Content Include="Library\Aspose.Cells_201402.dll" />
     <Content Include="Library\Aspose.Cells_201402.xml" />
+    <Content Include="Library\Aspose.Words.dll" />
+    <Content Include="Library\Aspose.Words.xml" />
     <Content Include="Library\Aspose.Words_201402.dll" />
     <Content Include="Library\Aspose.Words_201402.xml" />
     <Content Include="Library\DevComponents.DotNetBar2.dll" />

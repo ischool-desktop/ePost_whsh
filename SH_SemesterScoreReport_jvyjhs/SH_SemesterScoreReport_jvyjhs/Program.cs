@@ -19,11 +19,15 @@ namespace SH_SemesterScoreReport_jvyjhs
         public static void Main()
         {
             FISCA.Permission.Catalog cat = FISCA.Permission.RoleAclSource.Instance["學生"]["功能按鈕"];
-            cat.Add(new FISCA.Permission.RibbonFeature("SHSchool.SH_hwSH_SemesterScoreReport_jvyjhs", "期末成績通知單(常春藤)epost"));
+            cat.Add(new FISCA.Permission.RibbonFeature("SHSchool.SH_hwSH_SemesterScoreReport_whsh", "期末成績通知單epost"));
 
-            var btn = K12.Presentation.NLDPanels.Student.RibbonBarItems["資料統計"]["報表"]["成績相關報表"]["期末成績通知單(常春藤)epost"];
+            var btn = K12.Presentation.NLDPanels.Student.RibbonBarItems["資料統計"]["報表"]["成績相關報表"]["期末成績通知單epost"];
             //btn.Enable = true;
-            K12.Presentation.NLDPanels.Student.SelectedSourceChanged += delegate { btn.Enable = (K12.Presentation.NLDPanels.Student.SelectedSource.Count > 0) && FISCA.Permission.UserAcl.Current["SHSchool.SH_hwSH_SemesterScoreReport_jvyjhs"].Executable; };
+
+
+            // 2016/10/11 Permissions 的設定有點麻煩，先註解掉
+            //K12.Presentation.NLDPanels.Student.SelectedSourceChanged += delegate { btn.Enable = (K12.Presentation.NLDPanels.Student.SelectedSource.Count > 0) && FISCA.Permission.UserAcl.Current["SHSchool.SH_hwSH_SemesterScoreReport_jvyjhs"].Executable; };
+
             btn.Click += new EventHandler(Program_Click);
 
 

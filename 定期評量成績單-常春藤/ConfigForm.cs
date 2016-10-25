@@ -530,7 +530,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
                     this.Configure.Template = new Aspose.Words.Document(dialog.FileName);
                     List<string> fields = new List<string>(this.Configure.Template.MailMerge.GetFieldNames());
                     this.Configure.SubjectLimit = 0;
-                    while (fields.Contains("科目名稱" + (this.Configure.SubjectLimit + 1)))
+                    while (fields.Contains("科目" + (this.Configure.SubjectLimit + 1)))
                     {
                         this.Configure.SubjectLimit++;
                     }

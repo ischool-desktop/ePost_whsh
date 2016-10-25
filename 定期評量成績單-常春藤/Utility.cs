@@ -292,7 +292,11 @@ namespace SH_jvyjhs_StudentExamScore_epost
                 }
             }
 
+            // 以  Unicode 編譯
             StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Unicode);
+
+            // 以 ANSI 編譯
+            //StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
 
             DataTable dataTable = dt;
 

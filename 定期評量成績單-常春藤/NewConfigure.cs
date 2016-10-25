@@ -33,7 +33,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
         {
             if (checkBoxX1.Checked)
             {
-                Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.常春藤評量成績單_樣版));
+                Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人定期評量成績單樣版_文華高中格式_));
                 this.SubjectLimit = 25;
             }
         }
@@ -114,7 +114,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             #region 儲存檔案
-            string inputReportName = "常春藤學生個人評量成績單樣板";
+            string inputReportName = "學生個人評量成績單樣板";
             
 
             string path = Path.Combine(System.Windows.Forms.Application.StartupPath, "Reports");
@@ -139,7 +139,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
             try
             {
 
-                Aspose.Words.Document doc = new Aspose.Words.Document(new MemoryStream(Properties.Resources.常春藤評量成績單_樣版));
+                Aspose.Words.Document doc = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人定期評量成績單樣版_文華高中格式_));
                 doc.Save(path, Aspose.Words.SaveFormat.Doc);
                 System.Diagnostics.Process.Start(path);
                
@@ -155,7 +155,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
                 {
                     try
                     {
-                        Aspose.Words.Document doc = new Aspose.Words.Document(new MemoryStream(Properties.Resources.常春藤評量成績單_樣版));
+                        Aspose.Words.Document doc = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人定期評量成績單樣版_文華高中格式_));
                         doc.Save(sd.FileName, Aspose.Words.SaveFormat.Doc);                      
                 
                     }
