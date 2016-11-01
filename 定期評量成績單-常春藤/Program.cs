@@ -213,6 +213,8 @@ namespace SH_jvyjhs_StudentExamScore_epost
                 table.Columns.Add("成績總分a");
                 table.Columns.Add("全班名次");
                 table.Columns.Add("全班名次母數");
+                table.Columns.Add("加權總分班排名");
+                table.Columns.Add("加權總分班排名母數");
                 table.Columns.Add("加權總分科排名");
                 table.Columns.Add("加權總分科排名母數");
                 table.Columns.Add("加權總分全校排名");
@@ -1181,7 +1183,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
                                             if (rank && studentRec.Status == "一般" && summaryRank == true)//不在過濾名單且為一般生才做排名
                                             {
                                                 //加權總分班排名
-                                                key = "全班名次" + studentRec.RefClass.ClassID;
+                                                key = "加權總分班排名" + studentRec.RefClass.ClassID;
                                                 if (!ranks.ContainsKey(key)) ranks.Add(key, new List<decimal>());
                                                 if (!rankStudents.ContainsKey(key)) rankStudents.Add(key, new List<string>());
                                                 ranks[key].Add(printSubjectSumW);
@@ -1199,7 +1201,8 @@ namespace SH_jvyjhs_StudentExamScore_epost
                                                 ranks[key].Add(printSubjectSumW);
                                                 rankStudents[key].Add(studentID);
                                                 //加權平均班排名
-                                                key = "加權平均班排名" + studentRec.RefClass.ClassID;
+                                                //key = "加權平均班排名" + studentRec.RefClass.ClassID;
+                                                key = "全班名次" + studentRec.RefClass.ClassID;
                                                 if (!ranks.ContainsKey(key)) ranks.Add(key, new List<decimal>());
                                                 if (!rankStudents.ContainsKey(key)) rankStudents.Add(key, new List<string>());
                                                 ranks[key].Add(Math.Round(printSubjectSumW / printSubjectCreditSum, AvgRd, MidpointRounding.AwayFromZero));
@@ -2386,12 +2389,17 @@ namespace SH_jvyjhs_StudentExamScore_epost
                             #region 加權總分
                             if (studentPrintSubjectSumW.ContainsKey(studentID))
                             {
+                                //row["加權總分"] = studentPrintSubjectSumW[studentID];
+                                key = "加權總分班排名" + stuRec.RefClass.ClassID;
+
                                 row["成績總分a"] = studentPrintSubjectSumW[studentID];
-                                key = "全班名次" + stuRec.RefClass.ClassID;
+
+
                                 if (rankStudents.ContainsKey(key) && rankStudents[key].Contains(studentID))//明確判斷學生是否參與排名
                                 {
-                                    row["全班名次"] = ranks[key].IndexOf(studentPrintSubjectSumW[studentID]) + 1;
-                                    row["全班名次母數"] = ranks[key].Count;
+                                    row["加權總分班排名"] = ranks[key].IndexOf(studentPrintSubjectSumW[studentID]) + 1;
+                                    row["加權總分班排名母數"] = ranks[key].Count;
+
                                 }
                                 if (rankStudents.ContainsKey(key))
                                 {
@@ -2474,6 +2482,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
                                 {
                                     row["加權總分全校排名"] = ranks[key].IndexOf(studentPrintSubjectSumW[studentID]) + 1;
                                     row["加權總分全校排名母數"] = ranks[key].Count;
+
                                 }
                                 if (rankStudents.ContainsKey(key))
                                 {
@@ -2512,15 +2521,25 @@ namespace SH_jvyjhs_StudentExamScore_epost
                                 }
                             }
                             #endregion
+
+
                             #region 加權平均
                             if (studentPrintSubjectAvgW.ContainsKey(studentID))
                             {
+                                //row["加權平均"] = studentPrintSubjectAvgW[studentID];
+
                                 row["成績a"] = studentPrintSubjectAvgW[studentID];
-                                key = "加權平均班排名" + stuRec.RefClass.ClassID;
+                                //key = "加權平均班排名" + stuRec.RefClass.ClassID;
+
+                                key = "全班名次" + stuRec.RefClass.ClassID;
                                 if (rankStudents.ContainsKey(key) && rankStudents[key].Contains(studentID))//明確判斷學生是否參與排名
                                 {
-                                    row["加權平均班排名"] = ranks[key].IndexOf(studentPrintSubjectAvgW[studentID]) + 1;
-                                    row["加權平均班排名母數"] = ranks[key].Count;
+                                    //row["加權平均班排名"] = ranks[key].IndexOf(studentPrintSubjectAvgW[studentID]) + 1;
+                                    //row["加權平均班排名母數"] = ranks[key].Count;
+
+                                    row["全班名次"] = ranks[key].IndexOf(studentPrintSubjectAvgW[studentID]) + 1;
+                                    row["全班名次母數"] = ranks[key].Count;
+
                                 }
                                 if (rankStudents.ContainsKey(key))
                                 {
@@ -3225,7 +3244,7 @@ namespace SH_jvyjhs_StudentExamScore_epost
                             }
 
 
-                            data["類組名次"] = dr["類別1加權總分排名"] + "/" + dr["類別1加權總分排名母數"];
+                            data["類組名次"] = dr["類別1加權平均排名"] + "/" + dr["類別1加權平均排名母數"];
 
 
                             //data["導師評語"] = @"""" + data["導師評語"].ToString() + @"""";
@@ -3549,8 +3568,8 @@ namespace SH_jvyjhs_StudentExamScore_epost
             builder.InsertCell();
             builder.InsertField("MERGEFIELD 加權總分 \\* MERGEFORMAT ", "«加權總»");
             builder.InsertCell();
-            builder.InsertField("MERGEFIELD 全班名次 \\* MERGEFORMAT ", "«RP»");
-            builder.InsertField("MERGEFIELD 全班名次母數 \\b /  \\* MERGEFORMAT ", "/«TP»");
+            builder.InsertField("MERGEFIELD 加權總分班排名 \\* MERGEFORMAT ", "«RP»");
+            builder.InsertField("MERGEFIELD 加權總分班排名母數 \\b /  \\* MERGEFORMAT ", "/«TP»");
             builder.InsertCell();
             builder.InsertField("MERGEFIELD 加權總分科排名 \\* MERGEFORMAT ", "«RP»");
             builder.InsertField("MERGEFIELD 加權總分科排名母數 \\b /  \\* MERGEFORMAT ", "/«TP»");
