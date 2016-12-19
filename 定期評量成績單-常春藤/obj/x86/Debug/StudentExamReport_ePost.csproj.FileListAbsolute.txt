@@ -27,6 +27,7 @@ C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\
 C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\bin\Debug\SmartSchool.Core.HS.pdb
 C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\bin\Debug\SmartSchool.Customization.PlugIn.xml
 C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\bin\Debug\SmartSchool.ExceptionHandler.pdb
+C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\obj\x86\Debug\StudentExamReport_ePost.csprojResolveAssemblyReference.cache
 C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\obj\x86\Debug\SH_jvyjhs_StudentExamScore_epost.CloneConfigure.resources
 C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\obj\x86\Debug\SH_jvyjhs_StudentExamScore_epost.ConfigForm.resources
 C:\Users\ED\Documents\ischool_github\ePost_whsh\定期評量成績單-常春藤\obj\x86\Debug\SmartSchool.Evaluation.GraduationPlan.Editor.CommonPlanEditor.resources
