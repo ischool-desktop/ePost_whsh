@@ -238,7 +238,7 @@ namespace SH_SemesterScoreReport_jvyjhs
                     Configure = new Configure();
                     Configure.Name = dialog.ConfigName;
                     if (dialog.Template == null)
-                        Configure.Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人學期成績單_常春藤高中));
+                        Configure.Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人學期成績單_文華高中));
                     else
                         Configure.Template = dialog.Template;
 

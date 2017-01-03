@@ -119,6 +119,26 @@ namespace SH_SemesterScoreReport_jvyjhs
                 }
             }
 
+            // 計算統計資料， 2017/1/3 穎驊新增，因應文華ePost期末成績單 與舊常春藤 ePost 不同， 所做出更正
+            //舊格式為: "一般_曠課"、"午休_曠課" ， 新格式 "曠課" 來統計所有的曠課筆數
+            //雖然本次和恩正討論後，用不到了，但日後有可能有用，先留著。
+            //foreach (AttendanceRecord rec in attendList)
+            //{
+            //    if (!retVal.ContainsKey(rec.RefStudentID))
+            //        retVal.Add(rec.RefStudentID, new Dictionary<string, int>());
+
+            //    foreach (AttendancePeriod per in rec.PeriodDetail)
+            //    {               
+            //        // ex :曠課
+            //        string key =per.AbsenceType;
+
+            //        if (!retVal[rec.RefStudentID].ContainsKey(key))
+            //            retVal[rec.RefStudentID].Add(key, 0);
+
+            //        retVal[rec.RefStudentID][key]++;
+            //    }
+            //}
+
             return retVal;
         }
 
@@ -286,9 +306,20 @@ namespace SH_SemesterScoreReport_jvyjhs
                 if (!key1List.Contains(data.Type))
                     key1List.Add(data.Type);
 
-            foreach (AbsenceMappingInfo data in AbsenceMapping.SelectAll())
-                if (!Key2List.Contains(data.Name))
+            foreach (AbsenceMappingInfo data in AbsenceMapping.SelectAll()) 
+            {
+                if (!Key2List.Contains(data.Name))                 
                     Key2List.Add(data.Name);
+
+                //2017/1/3 穎驊新增，因應文華ePost 缺曠格式與舊常春藤不一樣，
+                //雖然本次和恩正討論後，用不到了，但日後有可能有用，先留著。
+                //if (!retVal.Contains(data.Name)) 
+                //{
+                //    retVal.Add(data.Name);                
+                //}                                    
+            }
+            
+                
 
             // 一般_曠課
             foreach (string key1 in key1List)
@@ -479,7 +510,7 @@ namespace SH_SemesterScoreReport_jvyjhs
             }
 
             //Workbook workbook = inputXls;
-            StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Unicode);
+            StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default);
 
             // StringBuilder sb = new StringBuilder();
 
@@ -688,25 +719,51 @@ namespace SH_SemesterScoreReport_jvyjhs
         {
             Dictionary<string, string> retVal = new Dictionary<string, string>();
             retVal.Add("學期學業成績", "學業成績");
-            retVal.Add("學期學業成績班排名", "班級排名");
-            retVal.Add("總分班排名母數", "班級人數");
+            retVal.Add("學期學業成績班排名", "全班名次");
+            retVal.Add("學期學業成績班排名母數", "全班人數");
             retVal.Add("本學期一般_事假", "事假");
             retVal.Add("本學期一般_病假", "病假");
             retVal.Add("本學期一般_喪假", "喪假");
             retVal.Add("本學期一般_曠課", "曠課");
             retVal.Add("本學期一般_遲到", "遲到");
             retVal.Add("本學期一般_公假", "公假");
+            retVal.Add("本學期一般_早退", "早退");
+
+            //retVal.Add("本學期一般_婚假", "婚假");
+            //retVal.Add("本學期一般_生理假", "生理假");
+            //retVal.Add("本學期一般_產假", "產假");
+
+            retVal.Add("本學期升旗_升旗缺席", "升旗缺席");
+            retVal.Add("本學期早修_早修缺席", "早讀");
+            retVal.Add("本學期午休_午休缺席", "午休");
+
+      
+            retVal.Add("本學期修習學分數", "應得學分");
+            retVal.Add("本學期取得學分數", "實得學分");
+            retVal.Add("姓名", "姓名");
+            retVal.Add("班級", "班級簡稱");
+            retVal.Add("學年度", "學年度");
+            retVal.Add("學期", "學期別");
+            retVal.Add("座號", "座號");
+            retVal.Add("學號", "學號");
+
+            retVal.Add("學期學業成績加權總分", "總分");
+
+            retVal.Add("累計取得學分數", "累計學分");
+
             retVal.Add("大功統計", "大功");
             retVal.Add("小功統計", "小功");
             retVal.Add("嘉獎統計", "嘉獎");
             retVal.Add("大過統計", "大過");
             retVal.Add("小過統計", "小過");
             retVal.Add("警告統計", "警告");
-            retVal.Add("本學期修習學分數", "應得學分");
-            retVal.Add("本學期取得學分數", "實得學分");
-            retVal.Add("姓名", "學生姓名");
+            retVal.Add("留校察看", "留校查看");
+
+            retVal.Add("導師評語", "綜合評語");
+
             return retVal;
         }
 
     }
 }
+

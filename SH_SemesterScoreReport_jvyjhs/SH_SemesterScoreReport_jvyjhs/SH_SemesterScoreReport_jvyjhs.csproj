@@ -175,11 +175,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Template.doc" />
     <None Include="Resources\個人學期成績單_常春藤高中.doc" />
+    <None Include="Resources\個人學期成績單_文華高中.doc" />
     <None Include="Resources\是的我又用excel寫程式了.xlsx" />
     <None Include="Resources\歡樂的合併欄位總表.doc" />
   </ItemGroup>

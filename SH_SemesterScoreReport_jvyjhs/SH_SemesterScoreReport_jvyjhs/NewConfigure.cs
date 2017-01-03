@@ -29,8 +29,13 @@ namespace SH_SemesterScoreReport_jvyjhs
         {
             if (checkBoxX1.Checked)
             {
-                Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人學期成績單_常春藤高中)).Clone();
-                this.SubjectLimit = 30;
+                //Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人學期成績單_常春藤高中)).Clone();                
+                //this.SubjectLimit = 30;
+
+                //2016/12/20 穎驊註解，因應文華高中 新 ePost 需求，樣板改成 文華高中版，支援科目上限為24
+                Template = new Aspose.Words.Document(new MemoryStream(Properties.Resources.個人學期成績單_文華高中)).Clone();
+                this.SubjectLimit = 24;
+
                 this.WithSchoolYearScore = true;
                 this.WithPrevSemesterScore = true;
             }
@@ -117,7 +122,7 @@ namespace SH_SemesterScoreReport_jvyjhs
             Document document = null;
             try
             {
-                document = new Document(new MemoryStream(Properties.Resources.個人學期成績單_常春藤高中));
+                document = new Document(new MemoryStream(Properties.Resources.個人學期成績單_文華高中));
                 document.Save(path, Aspose.Words.SaveFormat.Doc);                
                 System.Diagnostics.Process.Start(path);
             }
@@ -171,7 +176,7 @@ namespace SH_SemesterScoreReport_jvyjhs
             Document doc = null;
             try
             {
-                doc = new Document(new MemoryStream(Properties.Resources.個人學期成績單_常春藤高中));
+                doc = new Document(new MemoryStream(Properties.Resources.歡樂的合併欄位總表));
                 doc.Save(path,Aspose.Words.SaveFormat.Doc);
                
                 System.Diagnostics.Process.Start(path);
