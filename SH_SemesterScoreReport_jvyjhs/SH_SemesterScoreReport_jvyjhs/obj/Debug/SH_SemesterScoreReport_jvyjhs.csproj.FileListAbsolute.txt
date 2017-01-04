@@ -8,4 +8,3 @@ C:\Users\ED\Documents\ischool_github\ePost_whsh\SH_SemesterScoreReport_jvyjhs\SH
 C:\Users\ED\Documents\ischool_github\ePost_whsh\SH_SemesterScoreReport_jvyjhs\SH_SemesterScoreReport_jvyjhs\obj\Debug\SH_SemesterScoreReport_jvyjhs.csproj.GenerateResource.Cache
 C:\Users\ED\Documents\ischool_github\ePost_whsh\SH_SemesterScoreReport_jvyjhs\SH_SemesterScoreReport_jvyjhs\obj\Debug\SH_SemesterScoreReport_jvyjhs.dll
 C:\Users\ED\Documents\ischool_github\ePost_whsh\SH_SemesterScoreReport_jvyjhs\SH_SemesterScoreReport_jvyjhs\obj\Debug\SH_SemesterScoreReport_jvyjhs.pdb
-C:\Users\ED\Documents\ischool_github\ePost_whsh\SH_SemesterScoreReport_jvyjhs\SH_SemesterScoreReport_jvyjhs\obj\Debug\SH_SemesterScoreReport_jvyjhs.csprojResolveAssemblyReference.cache

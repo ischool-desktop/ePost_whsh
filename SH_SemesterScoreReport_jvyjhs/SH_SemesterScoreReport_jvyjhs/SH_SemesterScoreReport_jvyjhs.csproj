@@ -182,6 +182,7 @@
   <ItemGroup>
     <None Include="Resources\Template.doc" />
     <None Include="Resources\個人學期成績單_常春藤高中.doc" />
+    <None Include="Resources\個人學期成績單_文華高中%28學期成績為原始成績%29.doc" />
     <None Include="Resources\個人學期成績單_文華高中.doc" />
     <None Include="Resources\是的我又用excel寫程式了.xlsx" />
     <None Include="Resources\歡樂的合併欄位總表.doc" />
