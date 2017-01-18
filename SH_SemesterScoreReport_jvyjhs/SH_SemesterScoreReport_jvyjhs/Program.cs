@@ -1848,21 +1848,30 @@ namespace SH_SemesterScoreReport_jvyjhs
 
                                 foreach (var tag in studentTags[studentID])
                                 {
-
-                                    string Tag_name = ""+stuRec.Fields["學期學業成績類別1"];
-
-                                    if (tag.Name == Tag_name)
+                                    //2017/1/18 穎驊修正，因應文華學校反映，會有找不到"索引鍵"的問題，
+                                    //此問題有很多種原因可以導致，像是 沒有幫學生加上類組分類的類別、沒有進行固定排名計算等等
+                                    //無論如何，在此加入"ContainsKey()" 的判斷，以防止他爆掉。
+                                    // 如果學生沒有"學期學業成績類別1" 的資料，就會跳過，其成績單上就不會有"類組排名"
+                                    if (stuRec.Fields.ContainsKey("學期學業成績類別1"))
                                     {
+                                        string Tag_name = "" + stuRec.Fields["學期學業成績類別1"];
 
-                                        key = "學期學業成績" + Tag_name + "排名";
-                                        if (stuRec.Fields.ContainsKey(key))
-                                            row["學期學業成績類別1排名"] = "" + stuRec.Fields[key];
-                                        key = "學期學業成績" + Tag_name + "排名母數";
-                                        if (stuRec.Fields.ContainsKey(key))
-                                            row["學期學業成績類別1排名母數"] = "" + stuRec.Fields[key];
-                                    }
-                                }
-                                                                                    
+                                        if (tag.Name == Tag_name)
+                                        {
+                                            key = "學期學業成績" + Tag_name + "排名";
+                                            if (stuRec.Fields.ContainsKey(key))
+                                            {
+                                                row["學期學業成績類別1排名"] = "" + stuRec.Fields[key];
+                                            }
+
+                                            key = "學期學業成績" + Tag_name + "排名母數";
+                                            if (stuRec.Fields.ContainsKey(key))
+                                            {
+                                                row["學期學業成績類別1排名母數"] = "" + stuRec.Fields[key];
+                                            }
+                                        }
+                                    }                                    
+                                }                                                                                    
                             }
      
                             
