@@ -557,7 +557,15 @@ namespace SH_SemesterScoreReport_jvyjhs
                     {
                         // 檢查是否產生 Excel
                         Aspose.Cells.Workbook wb = new Aspose.Cells.Workbook();
+
                         Utility.CompletedXlsCsv("個人學期成績單epost", _dtEpost);
+
+                                                
+                        // 2017/1/19 穎驊筆記 ， 這邊想有嘗試使用 Aspose API 來解決 遇到特殊符號的問題(EX: Value 值 含有 "," 逗號 ，會造成原本的方法 自動將其分隔)
+                        // 但後來發現，用Aspose 產生的 CSV 檔 會有自動轉日期的 Bug 無法處理 (EX: 學生排名在全班 三十一人中 第一名 ，輸入為 1/31，但EXCEL 很天才雞婆會 將之 轉換為中文 "一月三十一號" )
+                        // 因此 最後還是繼續使用Utility.CompletedXlsCsv()方法，進去做更一步的改寫處理
+                        
+                        //Utility.UseAsposeToSaveCSV("個人學期成績單epost", _dtEpost);
                     }
 
                 };

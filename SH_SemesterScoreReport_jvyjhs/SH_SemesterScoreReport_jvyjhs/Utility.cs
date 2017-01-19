@@ -484,6 +484,39 @@ namespace SH_SemesterScoreReport_jvyjhs
         }
 
 
+        public static void UseAsposeToSaveCSV(string inputReportName, DataTable dt)
+        {
+            string reportName = inputReportName;
+
+            DataTable dataTable = dt;
+
+            Workbook workbook = new Workbook();
+            
+            workbook.Worksheets[0].Cells.ImportDataTable(dataTable, true, "A1");
+
+            string path = Path.Combine(System.Windows.Forms.Application.StartupPath, "Reports");
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+
+            path = Path.Combine(path, reportName +".csv" );
+
+            if (File.Exists(path))
+            {
+                int i = 1;
+                while (true)
+                {
+                    string newPath = Path.GetDirectoryName(path) + "\\" + Path.GetFileNameWithoutExtension(path) + (i++) + Path.GetExtension(path);
+                    if (!File.Exists(newPath))
+                    {
+                        path = newPath;
+                        break;
+                    }
+                }
+            }
+            workbook.Save(path,SaveFormat.CSV);                 
+        }
+
+
         public static void CompletedXlsCsv(string inputReportName, DataTable dt)
         {
 
@@ -546,7 +579,16 @@ namespace SH_SemesterScoreReport_jvyjhs
                 List<string> subList = new List<string>();
                 for (int col = 0; col < dt.Columns.Count; col++)
                 {
-                    subList.Add(dr[col].ToString());
+
+                    // 2017/1/19 穎驊筆記， 經過測試，發現若原本 不特別處理 來源 value 資料，
+                    // 若value其內含有 ","逗號，將會造成 CSV 檔判讀自動跳一位，最後導致錯位的問題，
+                    // 與恩正討論研究後， 在其字串 前後 加 "  雙引號可以解決此問題，
+                    // 又另外 若原本 value 文內 有 一個 " 雙引號 ， 將先使用 兩個 " 雙引號取代， 可以避免奇怪的 bug
+                    // 此方法 顯示將不會有問題。
+
+                    subList.Add('"'+dr[col].ToString().Replace("\"","\"\"")+'"');
+
+
                 }
                 sw.WriteLine(string.Join(",", subList.ToArray()));
                 //sb.AppendLine(string.Join(",",subList.ToArray()));
