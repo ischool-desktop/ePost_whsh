@@ -27,7 +27,7 @@ namespace SH_SemesterScoreReport_jvyjhs
 
             // 2016/10/11 Permissions 的設定有點麻煩，先註解掉
             K12.Presentation.NLDPanels.Student.SelectedSourceChanged += delegate { btn.Enable = (K12.Presentation.NLDPanels.Student.SelectedSource.Count > 0) && FISCA.Permission.UserAcl.Current["SHSchool.SH_hwSH_SemesterScoreReport_whsh"].Executable; };
-
+            
             btn.Click += new EventHandler(Program_Click);
 
             //2017/1/3 穎驊註解，下面這段可用 開發中產生  大量合併欄位總表，很好用。
@@ -943,7 +943,7 @@ namespace SH_SemesterScoreReport_jvyjhs
                         
 
                         _dtEpost.Columns.Add("綜合評語");
-                        //_dtEpost.Columns.Add("補考日期");
+                        _dtEpost.Columns.Add("補考日期");
 
 
                                   
@@ -3620,7 +3620,7 @@ namespace SH_SemesterScoreReport_jvyjhs
                         {
                             DataRow data = _dtEpost.NewRow();
 
-                            ////dr["補考日期"] = data["補考日期"] = DateStr;
+                            dr["補考日期"] = data["補考日期"] = DateStr;
                             
                             dr["補考日期"] = DateStr;
 
